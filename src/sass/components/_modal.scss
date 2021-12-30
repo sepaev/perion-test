@@ -1,0 +1,45 @@
+.modal {
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  opacity: 0.502;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) var(--timing-function);
+  overflow: hidden;
+  &.isOpen {
+    opacity: 1;
+    pointer-events: initial;
+    transform: scale(1);
+  }
+
+  &__close-button {
+    // background-image: url('../images/svg/closeBtn.svg');
+    width: 37px;
+    height: 37px;
+    position: absolute;
+    right: 20px;
+    top: 17px;
+    border: none;
+    border-radius: 50%;
+  }
+}

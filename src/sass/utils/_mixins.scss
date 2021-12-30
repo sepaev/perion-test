@@ -1,0 +1,10 @@
+@mixin font($weight, $size, $line-height, $letter-spacing) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height / $size;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin transition($property, $time: 250ms, $timingFunction: cubic-bezier(0.4, 0, 0.2, 1)) {
+  transition: $property $time $timingFunction;
+}

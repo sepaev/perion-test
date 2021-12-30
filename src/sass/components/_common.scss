@@ -4,6 +4,7 @@
 // * {
 //   outline: 1px solid red;
 // }
+
 li {
   list-style: none;
 }
@@ -17,10 +18,24 @@ body {
   justify-content: center;
   text-transform: uppercase;
   background-color: #fff;
+  &.modalIsOpen {
+    overflow: hidden;
+  }
 }
 .container {
   padding: 17px 0px;
   min-width: 1000px;
   margin: auto;
   display: inline-block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }

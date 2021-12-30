@@ -1,6 +1,10 @@
-@import './fonts';
+@import './utils/variables';
+@import './utils/fonts';
+@import './utils/mixins';
+
 @import '../../node_modules/modern-normalize/modern-normalize.css';
-@import './common';
-@import './header';
-@import './body';
-@import './modal';
+
+@import './components/common';
+@import './components/header';
+@import './components/body';
+@import './components/modal';
