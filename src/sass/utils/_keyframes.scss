@@ -1,0 +1,10 @@
+@keyframes confettiAnimation {
+  from {
+    // bottom: -500px;
+    transform: translateY(200%) rotate(0deg);
+  }
+  to {
+    // bottom: 200%;
+    transform: translateY(-10%) rotate(30deg);
+  }
+}

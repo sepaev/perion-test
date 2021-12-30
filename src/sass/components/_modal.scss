@@ -1,3 +1,5 @@
+$duration: 1000;
+
 .modal {
   background: -moz-linear-gradient(
     top,
@@ -24,7 +26,7 @@
   z-index: 2;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--animation-duration) var(--timing-function);
+  transition: opacity $duration/4 $timing-function;
   overflow: hidden;
   &.isOpen {
     opacity: 1;
@@ -41,5 +43,84 @@
     top: 17px;
     border: none;
     border-radius: 50%;
+    z-index: 1000;
+  }
+  &__image-cup {
+    position: absolute;
+    z-index: 3;
+    bottom: -600px;
+    left: 50%;
+    transform: translateX(-44%);
+    transition: all 500ms ease-out;
+    // transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    filter: drop-shadow(77px 77px 11px rgba(0, 0, 0, 0.4));
+  }
+  &__confetti {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 4;
+  }
+  &__confetti-piece {
+    z-index: 5;
+    position: absolute;
+    width: 553px;
+    height: 632px;
+    background-image: url('../images/confetti.png');
+    // background-color: $yellow;
+    top: 0;
+    opacity: 1;
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        transform: rotate(#{randomNum(-80, 180)}deg);
+        animation: confettiAnimation 3000ms infinite ease-out;
+        // animation: 3s ease-in 2s 2 reverse both paused confettiAnimation;
+        // animation-delay: 100ms;
+        // animation-duration: 4000ms;
+      }
+      &:nth-child(#{$i + 5}) {
+        transform: rotate(#{randomNum(-80, 180)}deg);
+        animation: confettiAnimation 3000ms infinite ease-out;
+        // animation: confettiAnimation 4000ms infinite ease-out;
+        // animation-delay: 1100ms;
+        // animation-duration: 4000ms;
+      }
+      // &:nth-child(#{$i + 8}) {
+      //   transform: rotate(#{randomNum(-80, 180)}deg);
+      //   animation: confettiAnimation 2000ms infinite ease-out;
+      //   animation-delay: 3000ms;
+      //   animation-duration: 4000ms;
+      // }
+    }
+    &:nth-child(even) {
+      top: 60%;
+      // left: 0%;
+    }
+    &:nth-child(5n-4) {
+      // animation-delay: 200ms;
+      left: -10%;
+    }
+    &:nth-child(5n-3) {
+      // animation: confettiAnimation #{$duration}ms infinite ease-out;
+      // animation-delay: 400ms;
+      left: 15%;
+    }
+    &:nth-child(5n-2) {
+      // animation: confettiAnimation #{$duration}ms infinite ease-out;
+      left: 40%;
+    }
+    &:nth-child(5n-1) {
+      // animation: confettiAnimation #{$duration}ms infinite ease-out;
+      left: 65%;
+    }
+    &:nth-child(5n) {
+      // animation: confettiAnimation #{$duration}ms infinite ease-out;
+      left: 90%;
+    }
   }
 }
