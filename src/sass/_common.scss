@@ -1,0 +1,26 @@
+// body {
+//   // background-image: url(../images/background.jpg);
+// }
+// * {
+//   outline: 1px solid red;
+// }
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: #fff;
+}
+.container {
+  padding: 17px 0px;
+  min-width: 1000px;
+  margin: auto;
+  display: inline-block;
+}

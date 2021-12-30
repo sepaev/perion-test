@@ -1,0 +1,15 @@
+.modalClose {
+  &__button {
+    // background-image: url('../images/svg/closeBtn.svg');
+    width: 37px;
+    height: 37px;
+    position: absolute;
+    right: 20px;
+    top: 17px;
+    border: none;
+    border-radius: 50%;
+  }
+  &__icon {
+    fill: black;
+  }
+}
