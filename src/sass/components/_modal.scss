@@ -1,6 +1,8 @@
 $duration: 1000;
 
 .modal {
+  max-width: 2000px;
+  max-height: 1050px;
   background: -moz-linear-gradient(
     top,
     rgba(255, 255, 255, 0.5) 50%,
@@ -19,11 +21,13 @@ $duration: 1000;
 
   opacity: 0.502;
   position: absolute;
+  // transform: translateX(50%);
+  left: 50%;
   top: 0;
-  left: 0;
+  // left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 20;
   opacity: 0;
   pointer-events: none;
   transition: opacity $duration/4 $timing-function;
@@ -31,28 +35,33 @@ $duration: 1000;
   &.isOpen {
     opacity: 1;
     pointer-events: initial;
-    transform: scale(1);
+    transform: scale(1) translateX(-50%);
   }
 
   &__close-button {
-    // background-image: url('../images/svg/closeBtn.svg');
-    width: 37px;
-    height: 37px;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+
+    width: 51px;
+    height: 51px;
     position: absolute;
     right: 20px;
     top: 17px;
-    border: none;
-    border-radius: 50%;
     z-index: 1000;
+  }
+  &__close-svg:hover {
+    fill: orange;
   }
   &__image-cup {
     position: absolute;
-    z-index: 3;
+    z-index: 30;
     bottom: -600px;
     left: 50%;
     transform: translateX(-44%);
     transition: all 500ms ease-out;
-    // transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     filter: drop-shadow(77px 77px 11px rgba(0, 0, 0, 0.4));
   }
   &__confetti {
@@ -63,62 +72,106 @@ $duration: 1000;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 4;
+    z-index: 40;
   }
   &__confetti-piece {
-    z-index: 5;
+    z-index: 50;
     position: absolute;
     width: 553px;
     height: 632px;
     background-image: url('../images/confetti.png');
     transition: all #{$duration}ms ease;
-
-    // @for $i from 1 through 5 {
-    //   &:nth-child(#{$i}) {
-    //     transform: rotate(#{randomNum(-80, 180)}deg);
-    //     animation: confettiAnimation 3000ms infinite ease-out;
-    //     // animation: 3s ease-in 2s 2 reverse both paused confettiAnimation;
-    //     // animation-delay: 100ms;
-    //     // animation-duration: 4000ms;
-    //   }
-    //   &:nth-child(#{$i + 5}) {
-    //     transform: rotate(#{randomNum(-80, 180)}deg);
-    //     animation: confettiAnimation 3000ms infinite ease-out;
-    //     // animation: confettiAnimation 4000ms infinite ease-out;
-    //     // animation-delay: 1100ms;
-    //     // animation-duration: 4000ms;
-    //   }
-    //   // &:nth-child(#{$i + 8}) {
-    //   //   transform: rotate(#{randomNum(-80, 180)}deg);
-    //   //   animation: confettiAnimation 2000ms infinite ease-out;
-    //   //   animation-delay: 3000ms;
-    //   //   animation-duration: 4000ms;
-    //   // }
-    // }
-    // &:nth-child(even) {
-    //   top: 60%;
-    //   // left: 0%;
-    // }
-    // &:nth-child(5n-4) {
-    //   // animation-delay: 200ms;
-    //   left: -10%;
-    // }
-    // &:nth-child(5n-3) {
-    //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-    //   // animation-delay: 400ms;
-    //   left: 15%;
-    // }
-    // &:nth-child(5n-2) {
-    //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-    //   left: 40%;
-    // }
-    // &:nth-child(5n-1) {
-    //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-    //   left: 65%;
-    // }
-    // &:nth-child(5n) {
-    //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-    //   left: 90%;
-    // }
   }
+
+  &__fans {
+    z-index: 65;
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+    transform: rotate(-45deg);
+    background-repeat: no-repeat;
+    background-size: 110%;
+
+    &-wrapper {
+      outline: solid 1px black;
+      position: absolute;
+      width: 100vw;
+      height: 120vw;
+      overflow: hidden;
+      transform: rotate(45deg);
+      bottom: 0;
+    }
+    //LEFT SIDE
+    &-wrapper.left-side {
+      z-index: 61;
+      left: -80%;
+      top: -50%;
+    }
+    &.left-side {
+      z-index: 63;
+      background-image: url('../images/fansLeft.jpg');
+      background-position: right;
+    }
+    //RIGHT SIDE
+    &-wrapper.right-side {
+      z-index: 62;
+      top: 0;
+      left: 35%;
+    }
+    &.right-side {
+      z-index: 64;
+      background-image: url('../images/fansRight.jpg');
+      // top: 0;
+      left: -50%;
+      bottom: 15%;
+      background-position: bottom 14% right 160%;
+    }
+  }
+  // @for $i from 1 through 5 {
+  //   &:nth-child(#{$i}) {
+  //     transform: rotate(#{randomNum(-80, 180)}deg);
+  //     animation: confettiAnimation 3000ms infinite ease-out;
+  //     // animation: 3s ease-in 2s 2 reverse both paused confettiAnimation;
+  //     // animation-delay: 100ms;
+  //     // animation-duration: 4000ms;
+  //   }
+  //   &:nth-child(#{$i + 5}) {
+  //     transform: rotate(#{randomNum(-80, 180)}deg);
+  //     animation: confettiAnimation 3000ms infinite ease-out;
+  //     // animation: confettiAnimation 4000ms infinite ease-out;
+  //     // animation-delay: 1100ms;
+  //     // animation-duration: 4000ms;
+  //   }
+  //   // &:nth-child(#{$i + 8}) {
+  //   //   transform: rotate(#{randomNum(-80, 180)}deg);
+  //   //   animation: confettiAnimation 2000ms infinite ease-out;
+  //   //   animation-delay: 3000ms;
+  //   //   animation-duration: 4000ms;
+  //   // }
+  // }
+  // &:nth-child(even) {
+  //   top: 60%;
+  //   // left: 0%;
+  // }
+  // &:nth-child(5n-4) {
+  //   // animation-delay: 200ms;
+  //   left: -10%;
+  // }
+  // &:nth-child(5n-3) {
+  //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+  //   // animation-delay: 400ms;
+  //   left: 15%;
+  // }
+  // &:nth-child(5n-2) {
+  //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+  //   left: 40%;
+  // }
+  // &:nth-child(5n-1) {
+  //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+  //   left: 65%;
+  // }
+  // &:nth-child(5n) {
+  //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+  //   left: 90%;
+  // }
 }

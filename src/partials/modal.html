@@ -1,31 +1,21 @@
 <div class="modal isClosed">
   <button class="modal__close-button">
-    <!-- <svg class="modalClose__icon">
-      <use href="./images/svg/closeBtn.svg"></use>
-    </svg> -->
-    Х
+    <svg class="modal__close-svg" width="51" height="51">
+      <use href="./images/svg/sprite.svg#close"></use>
+    </svg>
   </button>
-  <img src="./images/cupHoist.png" class="modal__image-cup" alt="cup" />
-  <ul class="modal__confetti">
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <!-- <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li>
-    <li class="modal__confetti-piece"></li> -->
-  </ul>
+  <section class="layerA">
+    <img src="./images/cupHoist.png" class="modal__image-cup" alt="cup" />
+  </section>
+  <section class="layerB">
+    <ul class="modal__confetti"></ul>
+  </section>
+  <section class="layerC">
+    <div class="modal__fans-wrapper left-side">
+      <div class="modal__fans left-side"></div>
+    </div>
+    <div class="modal__fans-wrapper right-side">
+      <div class="modal__fans right-side"></div>
+    </div>
+  </section>
 </div>
