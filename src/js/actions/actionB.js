@@ -1,5 +1,11 @@
-export function actionB(ref) {
-  ref.style.bottom = '-15px';
+import { getRefs } from '../refs';
+import { confettiPosipion } from '../../options/confettiPosition';
 
-  console.dir(ref.style);
+export function actionB() {
+  const { confettiAll } = getRefs();
+  console.dir(confettiAll);
+  confettiPosipion.map(({ bottom, rotate }, index) => {
+    confettiAll[index].style.bottom = bottom + 'px';
+    confettiAll[index].style.transform = `rotate(${rotate}deg)`;
+  });
 }

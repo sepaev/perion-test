@@ -71,56 +71,54 @@ $duration: 1000;
     width: 553px;
     height: 632px;
     background-image: url('../images/confetti.png');
-    // background-color: $yellow;
-    top: 0;
-    opacity: 1;
+    transition: all #{$duration}ms ease;
 
-    @for $i from 1 through 5 {
-      &:nth-child(#{$i}) {
-        transform: rotate(#{randomNum(-80, 180)}deg);
-        animation: confettiAnimation 3000ms infinite ease-out;
-        // animation: 3s ease-in 2s 2 reverse both paused confettiAnimation;
-        // animation-delay: 100ms;
-        // animation-duration: 4000ms;
-      }
-      &:nth-child(#{$i + 5}) {
-        transform: rotate(#{randomNum(-80, 180)}deg);
-        animation: confettiAnimation 3000ms infinite ease-out;
-        // animation: confettiAnimation 4000ms infinite ease-out;
-        // animation-delay: 1100ms;
-        // animation-duration: 4000ms;
-      }
-      // &:nth-child(#{$i + 8}) {
-      //   transform: rotate(#{randomNum(-80, 180)}deg);
-      //   animation: confettiAnimation 2000ms infinite ease-out;
-      //   animation-delay: 3000ms;
-      //   animation-duration: 4000ms;
-      // }
-    }
-    &:nth-child(even) {
-      top: 60%;
-      // left: 0%;
-    }
-    &:nth-child(5n-4) {
-      // animation-delay: 200ms;
-      left: -10%;
-    }
-    &:nth-child(5n-3) {
-      // animation: confettiAnimation #{$duration}ms infinite ease-out;
-      // animation-delay: 400ms;
-      left: 15%;
-    }
-    &:nth-child(5n-2) {
-      // animation: confettiAnimation #{$duration}ms infinite ease-out;
-      left: 40%;
-    }
-    &:nth-child(5n-1) {
-      // animation: confettiAnimation #{$duration}ms infinite ease-out;
-      left: 65%;
-    }
-    &:nth-child(5n) {
-      // animation: confettiAnimation #{$duration}ms infinite ease-out;
-      left: 90%;
-    }
+    // @for $i from 1 through 5 {
+    //   &:nth-child(#{$i}) {
+    //     transform: rotate(#{randomNum(-80, 180)}deg);
+    //     animation: confettiAnimation 3000ms infinite ease-out;
+    //     // animation: 3s ease-in 2s 2 reverse both paused confettiAnimation;
+    //     // animation-delay: 100ms;
+    //     // animation-duration: 4000ms;
+    //   }
+    //   &:nth-child(#{$i + 5}) {
+    //     transform: rotate(#{randomNum(-80, 180)}deg);
+    //     animation: confettiAnimation 3000ms infinite ease-out;
+    //     // animation: confettiAnimation 4000ms infinite ease-out;
+    //     // animation-delay: 1100ms;
+    //     // animation-duration: 4000ms;
+    //   }
+    //   // &:nth-child(#{$i + 8}) {
+    //   //   transform: rotate(#{randomNum(-80, 180)}deg);
+    //   //   animation: confettiAnimation 2000ms infinite ease-out;
+    //   //   animation-delay: 3000ms;
+    //   //   animation-duration: 4000ms;
+    //   // }
+    // }
+    // &:nth-child(even) {
+    //   top: 60%;
+    //   // left: 0%;
+    // }
+    // &:nth-child(5n-4) {
+    //   // animation-delay: 200ms;
+    //   left: -10%;
+    // }
+    // &:nth-child(5n-3) {
+    //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+    //   // animation-delay: 400ms;
+    //   left: 15%;
+    // }
+    // &:nth-child(5n-2) {
+    //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+    //   left: 40%;
+    // }
+    // &:nth-child(5n-1) {
+    //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+    //   left: 65%;
+    // }
+    // &:nth-child(5n) {
+    //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+    //   left: 90%;
+    // }
   }
 }

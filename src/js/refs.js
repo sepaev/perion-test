@@ -6,6 +6,7 @@ export const getRefs = () => {
     closeButton: document.querySelector('.modal__close-button'),
     ______MOVING_ELEMENTS: null,
     cupHoist: document.querySelector('.modal__image-cup'),
-    // cupHoist: document.querySelector('.modal__image-cup'),
+    confettiBox: document.querySelector('.modal__confetti'),
+    confettiAll: document.querySelectorAll('.modal__confetti-piece'),
   };
 };

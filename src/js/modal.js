@@ -20,7 +20,7 @@ import {
 const startDelay = 1000;
 const actionTime = 250;
 
-const { cupHoist, body, modalWindow, closeButton } = getRefs();
+const { confettiBox, cupHoist, body, modalWindow, closeButton } = getRefs();
 
 function closeModalWindow(e) {
   e.preventDefault();
@@ -35,8 +35,8 @@ function openModal() {
   modalWindow.classList.toggle('isOpen');
   body.classList.toggle('modalIsOpen');
   closeButton.addEventListener('click', closeModalWindow);
-  window.setTimeout(() => actionB(cupHoist), actionTime * 0);
-  // window.setTimeout(() => actionB(cupHoist), actionTime * 1);
+  window.setTimeout(() => actionA(cupHoist, confettiBox), actionTime * 0);
+  window.setTimeout(() => actionB(), actionTime * 1);
   actionC();
   actionD();
   actionE();
