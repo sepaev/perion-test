@@ -104,19 +104,26 @@ $duration: 1000;
     //LEFT SIDE
     &-wrapper.left-side {
       z-index: 61;
-      left: -80%;
-      top: -50%;
+      left: -55%;
+      bottom: -20%;
+
+      // top: -60%;
+      // width: 250vw;
     }
     &.left-side {
       z-index: 63;
+      // right: 50%;
+      // bottom: -15%;
+      top: -10%;
+      left: 30%;
       background-image: url('../images/fansLeft.jpg');
-      background-position: right;
+      background-position: bottom 0% left 160%;
     }
     //RIGHT SIDE
     &-wrapper.right-side {
       z-index: 62;
       top: 0;
-      left: 35%;
+      left: 30%;
     }
     &.right-side {
       z-index: 64;
@@ -124,7 +131,7 @@ $duration: 1000;
       // top: 0;
       left: -50%;
       bottom: 15%;
-      background-position: bottom 14% right 160%;
+      background-position: bottom 14% right 200%;
     }
   }
   // @for $i from 1 through 5 {
