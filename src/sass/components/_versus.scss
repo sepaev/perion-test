@@ -58,4 +58,15 @@
     height: 100%;
     justify-content: center;
   }
+  &__team-logo {
+    width: 50%;
+    display: flex;
+
+    &.left-side {
+      justify-content: start;
+    }
+    &.right-side {
+      justify-content: end;
+    }
+  }
 }
