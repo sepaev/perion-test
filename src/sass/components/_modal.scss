@@ -1,30 +1,21 @@
 $duration: 1000;
+$maxWidth: 2000;
+$maxHeight: 1050;
 
 .modal {
-  max-width: 2000px;
-  max-height: 1050px;
-  background: -moz-linear-gradient(
-    top,
-    rgba(255, 255, 255, 0.5) 50%,
-    rgba(0, 0, 0, 0.5) 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    top,
-    rgba(255, 255, 255, 0.5) 50%,
-    rgba(0, 0, 0, 0.5) 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5) 50%,
-    rgba(0, 0, 0, 0.5) 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
+  max-width: #{$maxWidth}px;
+  min-width: #{$maxWidth/2}px;
+  max-height: #{$maxHeight}px;
+  @for $i from 1 through 10 {
+    @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+      max-height: #{$maxHeight/(10 + $i) * 10}px;
+    }
+  }
+  background: linear-gradient(rgba(255, 255, 255, 0.5) 50%, rgba(0, 0, 0, 0.5) 100%);
   opacity: 0.502;
   position: absolute;
-  // transform: translateX(50%);
   left: 50%;
   top: 0;
-  // left: 0;
   width: 100%;
   height: 100%;
   z-index: 20;
@@ -39,8 +30,6 @@ $duration: 1000;
   }
 
   &__close-button {
-    // background-position: center;
-    // background-repeat: no-repeat;
     border: none;
     border-radius: 50%;
     background-color: transparent;
@@ -84,101 +73,159 @@ $duration: 1000;
   }
 
   &__fans {
-    z-index: 65;
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: rotate(-45deg);
-    background-repeat: no-repeat;
-    background-size: 110%;
+    position: fixed;
+    z-index: 66;
+    width: 100%;
+    height: 120%;
+    min-height: 120%;
+    transform: rotate(-45deg) translateY(-60%);
 
+    @for $i from 8 through 0 {
+      @media (max-height: #{$maxHeight/3+($i*50)-50}px) {
+        height: #{285 - 20 * $i + '%'};
+      }
+    }
+
+    &-picture {
+      z-index: 65;
+      height: 100%;
+      min-width: 50%;
+      background-repeat: no-repeat;
+      background-size: 120%;
+      background-blend-mode: multiply, screen;
+    }
     &-wrapper {
+      display: block;
       outline: solid 1px black;
-      position: absolute;
-      width: 100vw;
-      height: 120vw;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
-      transform: rotate(45deg);
-      bottom: 0;
+      transition: all #{$duration}ms ease;
     }
     //LEFT SIDE
     &-wrapper.left-side {
       z-index: 61;
-      left: -55%;
-      bottom: -20%;
-
-      // top: -60%;
-      // width: 250vw;
+      // transform: translate(-4%, 0%);
+      transform: translate(-100%, -140%);
     }
-    &.left-side {
+    &-picture.left-side {
       z-index: 63;
-      // right: 50%;
-      // bottom: -15%;
-      top: -10%;
-      left: 30%;
-      background-image: url('../images/fansLeft.jpg');
-      background-position: bottom 0% left 160%;
+      transform: rotate(45deg) translate(10%, 31%);
+      background-image: linear-gradient(rgb(208, 173, 104), rgb(208, 173, 104)),
+        url('../images/fansLeft.jpg');
+      background-position: bottom 0% left 50%;
+      @for $i from 10 through 5 {
+        @media (max-height: #{$maxHeight/3+($i*50)-50}px) {
+          background-position: bottom #{-15 + (11 - $i) * (-2) * (10-$i) + '%'} right #{50 +
+            (10 - $i) * -10 + '%'};
+        }
+      }
+      @for $i from 4 through 1 {
+        @media (max-height: #{$maxHeight/3+($i*50)-50}px) {
+          background-position: bottom -89% right #{54 + (-5 + $i) * 10 + '%'};
+        }
+      }
+      &::after {
+        z-index: 66;
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: -20px;
+        background: radial-gradient(circle closest-side at 33% 57%, transparent, #000 600px);
+        opacity: 0.8;
+        background-position: bottom 0% left -10%;
+      }
     }
     //RIGHT SIDE
     &-wrapper.right-side {
       z-index: 62;
-      top: 0;
-      left: 30%;
+      // transform: translate(12%, 0%);
+      transform: translate(100%, 130%);
     }
-    &.right-side {
+    &-picture.right-side {
       z-index: 64;
-      background-image: url('../images/fansRight.jpg');
-      // top: 0;
-      left: -50%;
-      bottom: 15%;
-      background-position: bottom 14% right 200%;
+      transform: rotate(45deg) translate(-10%, -24%);
+      background-image: linear-gradient(rgb(208, 173, 104), rgb(208, 173, 104)),
+        url('../images/fansRight.jpg');
+      background-position: bottom 30% right 50%;
+      @for $i from 9 through 5 {
+        @media (max-height: #{$maxHeight/3+($i*50)-50}px) {
+          background-position: bottom #{50 + (10 - $i) * -20 + '%'} right #{10 + (10 - $i) * 30 + '%'};
+        }
+      }
+      &::after {
+        z-index: 66;
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: -20px;
+        background: radial-gradient(circle closest-side at 67% 57%, transparent, #000 600px);
+        opacity: 0.8;
+      }
     }
   }
-  // @for $i from 1 through 5 {
-  //   &:nth-child(#{$i}) {
-  //     transform: rotate(#{randomNum(-80, 180)}deg);
-  //     animation: confettiAnimation 3000ms infinite ease-out;
-  //     // animation: 3s ease-in 2s 2 reverse both paused confettiAnimation;
-  //     // animation-delay: 100ms;
-  //     // animation-duration: 4000ms;
-  //   }
-  //   &:nth-child(#{$i + 5}) {
-  //     transform: rotate(#{randomNum(-80, 180)}deg);
-  //     animation: confettiAnimation 3000ms infinite ease-out;
-  //     // animation: confettiAnimation 4000ms infinite ease-out;
-  //     // animation-delay: 1100ms;
-  //     // animation-duration: 4000ms;
-  //   }
-  //   // &:nth-child(#{$i + 8}) {
-  //   //   transform: rotate(#{randomNum(-80, 180)}deg);
-  //   //   animation: confettiAnimation 2000ms infinite ease-out;
-  //   //   animation-delay: 3000ms;
-  //   //   animation-duration: 4000ms;
-  //   // }
-  // }
-  // &:nth-child(even) {
-  //   top: 60%;
-  //   // left: 0%;
-  // }
-  // &:nth-child(5n-4) {
-  //   // animation-delay: 200ms;
-  //   left: -10%;
-  // }
-  // &:nth-child(5n-3) {
-  //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-  //   // animation-delay: 400ms;
-  //   left: 15%;
-  // }
-  // &:nth-child(5n-2) {
-  //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-  //   left: 40%;
-  // }
-  // &:nth-child(5n-1) {
-  //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-  //   left: 65%;
-  // }
-  // &:nth-child(5n) {
-  //   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-  //   left: 90%;
-  // }
 }
+
+// @media (max-width: $max-mobile) {
+//   padding: 46px 20px 43px 21px;
+//   min-width: $min-mobile;
+// }
+// @media (min-width: $min-tablet) and (max-width: $max-tablet) {
+//   padding: 41px 76px 37px 71px;
+//   min-width: $min-tablet;
+// }
+// @media (min-width: $min-desktop) {
+//   max-width: 100%;
+//   padding: 46px 71px 65px 71px;
+//   margin: auto;
+// }
+
+// @for $i from 1 through 5 {
+//   &:nth-child(#{$i}) {
+//     transform: rotate(#{randomNum(-80, 180)}deg);
+//     animation: confettiAnimation 3000ms infinite ease-out;
+//     // animation: 3s ease-in 2s 2 reverse both paused confettiAnimation;
+//     // animation-delay: 100ms;
+//     // animation-duration: 4000ms;
+//   }
+//   &:nth-child(#{$i + 5}) {
+//     transform: rotate(#{randomNum(-80, 180)}deg);
+//     animation: confettiAnimation 3000ms infinite ease-out;
+//     // animation: confettiAnimation 4000ms infinite ease-out;
+//     // animation-delay: 1100ms;
+//     // animation-duration: 4000ms;
+//   }
+//   // &:nth-child(#{$i + 8}) {
+//   //   transform: rotate(#{randomNum(-80, 180)}deg);
+//   //   animation: confettiAnimation 2000ms infinite ease-out;
+//   //   animation-delay: 3000ms;
+//   //   animation-duration: 4000ms;
+//   // }
+// }
+// &:nth-child(even) {
+//   top: 60%;
+//   // left: 0%;
+// }
+// &:nth-child(5n-4) {
+//   // animation-delay: 200ms;
+//   left: -10%;
+// }
+// &:nth-child(5n-3) {
+//   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+//   // animation-delay: 400ms;
+//   left: 15%;
+// }
+// &:nth-child(5n-2) {
+//   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+//   left: 40%;
+// }
+// &:nth-child(5n-1) {
+//   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+//   left: 65%;
+// }
+// &:nth-child(5n) {
+//   // animation: confettiAnimation #{$duration}ms infinite ease-out;
+//   left: 90%;
+// }
