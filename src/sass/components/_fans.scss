@@ -1,0 +1,94 @@
+.fans {
+  position: fixed;
+  z-index: 66;
+  width: 100%;
+  height: 120%;
+  min-height: 120%;
+  transform: rotate(-45deg) translateY(-60%);
+
+  @for $i from 8 through 0 {
+    @media (max-height: #{$maxHeight/3+($i*50)-50}px) {
+      height: #{285 - 20 * $i + '%'};
+    }
+  }
+
+  &__picture {
+    z-index: 65;
+    height: 100%;
+    min-width: 50%;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-blend-mode: multiply, screen;
+  }
+  &__wrapper {
+    display: block;
+    outline: solid 1px black;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all #{$duration}ms ease;
+  }
+  //LEFT SIDE
+  &__wrapper.left-side {
+    z-index: 61;
+    transform: translate(-100%, -140%);
+  }
+  &__picture.left-side {
+    z-index: 63;
+    transform: rotate(45deg) translate(10%, 31%);
+    background-image: linear-gradient(rgb(208, 173, 104), rgb(208, 173, 104)),
+      url('../images/fansLeft.jpg');
+    background-position: bottom 0% left 50%;
+
+    @for $i from 10 through 5 {
+      @media (max-height: #{$maxHeight/3+($i*50)-50}px) {
+        background-position: bottom #{-15 + (11 - $i) * (-2) * (10-$i) + '%'} right #{50 + (10 - $i) *
+          -10 + '%'};
+      }
+    }
+    @for $i from 4 through 1 {
+      @media (max-height: #{$maxHeight/3+($i*50)-50}px) {
+        background-position: bottom -89% right #{54 + (-5 + $i) * 10 + '%'};
+      }
+    }
+    &::after {
+      z-index: 66;
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      left: -20px;
+      background: radial-gradient(circle closest-side at 33% 57%, transparent, #000 600px);
+      opacity: 0.8;
+      background-position: bottom 0% left -10%;
+    }
+  }
+  //RIGHT SIDE
+  &__wrapper.right-side {
+    z-index: 62;
+    transform: translate(100%, 130%);
+  }
+  &__picture.right-side {
+    z-index: 64;
+    transform: rotate(45deg) translate(-10%, -24%);
+    background-image: linear-gradient(rgb(208, 173, 104), rgb(208, 173, 104)),
+      url('../images/fansRight.jpg');
+    background-position: bottom 30% right 50%;
+
+    @for $i from 9 through 5 {
+      @media (max-height: #{$maxHeight/3+($i*50)-50}px) {
+        background-position: bottom #{50 + (10 - $i) * -20 + '%'} right #{10 + (10 - $i) * 30 + '%'};
+      }
+    }
+    &::after {
+      z-index: 66;
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      left: -20px;
+      background: radial-gradient(circle closest-side at 67% 57%, transparent, #000 600px);
+      opacity: 0.8;
+    }
+  }
+}

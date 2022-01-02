@@ -1,0 +1,11 @@
+.cupHoist {
+  &__image {
+    position: absolute;
+    z-index: 30;
+    bottom: -600px;
+    left: 50%;
+    transform: translateX(-44%);
+    transition: all 500ms ease-out;
+    filter: drop-shadow(77px 77px 11px rgba(0, 0, 0, 0.4));
+  }
+}
