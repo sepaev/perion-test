@@ -15,6 +15,6 @@
     width: 553px;
     height: 632px;
     background-image: url('../images/confetti.png');
-    transition: all #{$duration * 2}ms ease;
+    transition: all #{$duration * 2}ms linear;
   }
 }

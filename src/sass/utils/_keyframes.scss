@@ -1,10 +1,45 @@
-@keyframes confettiAnimation {
+@keyframes teamsAnimationLeft {
   from {
-    // bottom: -500px;
-    transform: translateY(200%) rotate(0deg);
+    opacity: 0;
+    width: 50vw;
+    height: 50vw;
+    transform: translateX(-60%);
+    max-width: 50vw;
+  }
+  50% {
+    opacity: 0.5;
+    width: 34.45vw;
+    height: 34.45vw;
+    transform: translateX(-30%);
   }
   to {
-    // bottom: 200%;
-    transform: translateY(-10%) rotate(30deg);
+    width: 18.9vw;
+    height: 18.9vw;
+    opacity: 1;
+    transform: translateX(0%);
+    max-width: 378px;
+  }
+}
+
+@keyframes teamsAnimationRight {
+  from {
+    opacity: 0;
+    width: 50vw;
+    height: 50vw;
+    transform: translateX(60%);
+    max-width: 50vw;
+  }
+  50% {
+    opacity: 0.5;
+    width: 35.08vw;
+    height: 35.08vw;
+    transform: translateX(30%);
+  }
+  to {
+    width: 20.15vw;
+    height: 20.15vw;
+    max-width: 399px;
+    opacity: 1;
+    transform: translateX(0%);
   }
 }

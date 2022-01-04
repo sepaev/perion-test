@@ -8,8 +8,9 @@ export const getRefs = () => {
     ______MOVING_ELEMENTS: '_______________this is just divider',
     cupHoist: document.querySelector('.cupHoist__image'),
     confettiAll: document.querySelectorAll('.confetti__item'),
-    fansLeft: document.querySelector('.fans__wrapper.left-side'),
-    fansRight: document.querySelector('.fans__wrapper.right-side'),
+    fansGate: document.querySelectorAll('.fans__wrapper'),
+    // fansRight: document.querySelector('.fans__wrapper.right-side'),
     tagLines: document.querySelectorAll('.versus__tagline-p'),
+    teams: document.querySelectorAll('.versus__team-svg'),
   };
 };

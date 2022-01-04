@@ -11,8 +11,15 @@
     width: 100%;
     height: 100%;
     justify-content: center;
+    font-size: 307px;
+    @for $i from 1 through 20 {
+      @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+        font-size: #{$maxWidth/(10 + $i) * 1.53+'px'};
+      }
+    }
   }
   &__tagline-p {
+    $dislocation: 25;
     margin: 0;
     width: 100%;
     font-family: 'DINNextLTPro-Heavy';
@@ -28,22 +35,64 @@
     z-index: 73;
     opacity: 0;
     transition: opacity #{$duration / 4}ms linear;
+    filter: drop-shadow(6.691px 7.431px 30.4px rgba(0, 0, 0));
     &.line1 {
-      font-size: 307px;
+      font-size: 100%;
       line-height: 175.14px;
-      text-shadow: 6.691px 7.431px 30.4px rgba(0, 0, 0, 6);
-      transform: translateY(-110%);
+      text-shadow: 6.691px 7.431px 30.4px rgba(0, 0, 0, 1);
+      transform: translateY(#{-100 - $dislocation + '%'});
+      @for $i from 1 through 1 {
+        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+          transform: translateY(#{-100 - $dislocation + $i * 10+'%'});
+        }
+      }
+      @for $i from 2 through 6 {
+        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+          transform: translateY(#{-90 - $dislocation + (-1 + $i) * 6 +'%'});
+        }
+      }
+      @for $i from 7 through 10 {
+        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+          transform: translateY(#{-57 - $dislocation + (-6 + $i) * 3+'%'});
+        }
+      }
+      @for $i from 11 through 20 {
+        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+          transform: translateY(#{-45 - $dislocation + (-10 + $i) * 1+'%'});
+        }
+      }
     }
     &.line2 {
-      font-size: 147px;
+      font-size: 70.03%;
       line-height: 176.61px;
-      text-shadow: 6.691px 7.431px 30.4px rgba(0, 0, 0, 5);
+      text-shadow: 6.691px 7.431px 30.4px rgba(0, 0, 0, 0.75);
+      transform: translateY(#{$dislocation * -1}px);
     }
     &.line3 {
-      font-size: 123px;
+      font-size: 40.07%;
       line-height: 110.67px;
-      transform: translateY(150%);
-      text-shadow: 6.691px 7.431px 30.4px rgba(0, 0, 0, 1);
+      transform: translateY(#{150 - $dislocation + '%'});
+      text-shadow: 6.691px 7.431px 30.4px rgba(0, 0, 0, 0.5);
+      @for $i from 1 through 1 {
+        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+          transform: translateY(#{150 - $dislocation - $i * 10+'%'});
+        }
+      }
+      @for $i from 2 through 6 {
+        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+          transform: translateY(#{140 - $dislocation - (-1 + $i) * 7 +'%'});
+        }
+      }
+      @for $i from 7 through 10 {
+        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+          transform: translateY(#{107 - $dislocation - (-6 + $i) * 4+'%'});
+        }
+      }
+      @for $i from 11 through 20 {
+        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+          transform: translateY(#{91 - $dislocation - (-10 + $i) * 1+'%'});
+        }
+      }
     }
   }
   &__teams {
@@ -57,16 +106,43 @@
     width: 100%;
     height: 100%;
     justify-content: center;
+    z-index: 75;
   }
   &__team-logo {
     width: 50%;
     display: flex;
+    align-self: center;
+    vertical-align: center;
 
     &.left-side {
+      padding-left: 9.2%;
       justify-content: start;
     }
     &.right-side {
+      padding-right: 9.2%;
       justify-content: end;
+    }
+  }
+  &__team-svg {
+    opacity: 0;
+    width: 50vw;
+    height: 50vw;
+    // transition: all #{$duration}ms linear;
+
+    &.left-side {
+      transform: translateX(-60%);
+      // animation: teamsAnimationLeft #{$duration}ms infinite linear;
+      // left: 18.4%;
+      // width: 18.9vw;
+      // height: 18.9vw;
+      // max-width: 378px;
+    }
+    &.right-side {
+      transform: translateX(60%);
+      // animation: teamsAnimationRight #{$duration}ms infinite linear;
+      // width: 20.15vw;
+      // height: 20.15vw;
+      // max-width: 399px;
     }
   }
 }

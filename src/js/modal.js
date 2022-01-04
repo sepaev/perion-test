@@ -6,7 +6,7 @@ const actionTime = 250;
 const startDelay = actionTime * 4;
 
 const { confettiBox, cupHoist, body, modalWindow, closeButton } = getRefs();
-const { fansLeft, fansRight, tagLines } = getRefs();
+const { teams, fansGate, tagLines } = getRefs();
 
 function closeModalWindow(e) {
   e.preventDefault();
@@ -19,11 +19,11 @@ function openModal() {
   modalWindow.classList.toggle('isOpen');
   body.classList.toggle('modalIsOpen');
   closeButton.addEventListener('click', closeModalWindow);
-  window.setTimeout(() => actionA(cupHoist, confettiBox), actionTime * 0);
-  window.setTimeout(() => actionB(), actionTime * 1);
-  window.setTimeout(() => actionC(fansLeft, fansRight), actionTime * 3);
-  window.setTimeout(() => actionD(tagLines), actionTime * 4);
-  actionE();
+  window.setTimeout(() => actionA(cupHoist, confettiBox), actionTime * 0); // 0 + 500 => 500
+  window.setTimeout(() => actionB(), actionTime * 1); // 250 + 2000 => 2250
+  window.setTimeout(() => actionC(fansGate), actionTime * 3); //750 + 1500 => 2250
+  window.setTimeout(() => actionD(tagLines), actionTime * 7); // 1750 + 1800 => 3550
+  window.setTimeout(() => actionE(teams), actionTime * 15); // 3750 + 500
   actionF();
   actionG();
   actionH();
