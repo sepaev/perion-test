@@ -1,5 +1,5 @@
 .versus {
-  z-index: 70;
+  z-index: 170;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -32,7 +32,7 @@
     -ms-transform: matrix(1.46457255349789, 0, 0, 1.46534663789396, 0, 0);
     position: fixed;
     top: 50%;
-    z-index: 73;
+    z-index: 173;
     opacity: 0;
     transition: opacity #{$duration / 4}ms linear;
     filter: drop-shadow(6.691px 7.431px 30.4px rgba(0, 0, 0));
@@ -106,13 +106,12 @@
     width: 100%;
     height: 100%;
     justify-content: center;
-    z-index: 75;
+    z-index: 175;
   }
   &__team-logo {
     width: 50%;
     display: flex;
     align-self: center;
-    vertical-align: center;
 
     &.left-side {
       padding-left: 9.2%;
@@ -131,17 +130,19 @@
 
     &.left-side {
       transform: translateX(-60%);
+      transition: transform #{$duration * 1.5}ms linear;
       // animation: teamsAnimationLeft #{$duration}ms infinite linear;
       // left: 18.4%;
-      // width: 18.9vw;
-      // height: 18.9vw;
+      width: 50vw;
+      height: 50vw;
       // max-width: 378px;
     }
     &.right-side {
       transform: translateX(60%);
+      transition: transform #{$duration * 1.5}ms linear;
       // animation: teamsAnimationRight #{$duration}ms infinite linear;
-      // width: 20.15vw;
-      // height: 20.15vw;
+      width: 50vw;
+      height: 50vw;
       // max-width: 399px;
     }
   }

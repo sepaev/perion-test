@@ -1,4 +1,4 @@
-@keyframes teamsAnimationLeft {
+@keyframes teamsShowLeftAnimation {
   from {
     opacity: 0;
     width: 50vw;
@@ -21,7 +21,7 @@
   }
 }
 
-@keyframes teamsAnimationRight {
+@keyframes teamsShowRightAnimation {
   from {
     opacity: 0;
     width: 50vw;
@@ -41,5 +41,23 @@
     max-width: 399px;
     opacity: 1;
     transform: translateX(0%);
+  }
+}
+
+@keyframes teamsHideLeftAnimation {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-300%);
+  }
+}
+
+@keyframes teamsHideRightAnimation {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(300%);
   }
 }
