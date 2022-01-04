@@ -32,6 +32,9 @@
     height: 100%;
     overflow: hidden;
     transition: all #{$duration * 1.5}ms linear;
+    @media (max-height: 700px) and (max-width: 1200px) {
+      width: 120%;
+    }
   }
   //LEFT SIDE
   &__wrapper.left-side {
