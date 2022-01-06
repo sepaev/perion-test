@@ -1,9 +1,11 @@
-export { actionA } from './actionA';
-export { actionB } from './actionB';
-export { actionC } from './actionC';
-export { actionD } from './actionD';
-export { actionE } from './actionE';
-export { actionF } from './actionF';
+export { moveCup } from './moveCup';
+export { createConfetti } from './createConfetti';
+export { changeModalBackground } from './changeModalBackground';
+export { moveConfetti } from './moveConfetti';
+export { moveFansGate } from './moveFansGate';
+export { writeTaglines } from './writeTaglines';
+export { teamLogoAnimation } from './teamLogoAnimation';
+export { openFanGates } from './openFanGates';
 export { actionG } from './actionG';
 export { actionH } from './actionH';
 export { actionI } from './actionI';

@@ -5,6 +5,8 @@ export const getRefs = () => {
     modalWindow: document.querySelector('.modal'),
     closeButton: document.querySelector('.modal__close-button'),
     confettiBox: document.querySelector('.confetti__list'),
+    background: document.querySelector('.background'),
+    dashboard: document.querySelector('.dashboard'),
     ______MOVING_ELEMENTS: '_______________this is just divider',
     cupHoist: document.querySelector('.cupHoist__image'),
     confettiAll: document.querySelectorAll('.confetti__item'),

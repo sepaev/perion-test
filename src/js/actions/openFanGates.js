@@ -1,4 +1,8 @@
-export function actionF([fansLeft, fansRight], tagLines, [leftTeam, rightTeam]) {
+import { getRefs } from '../refs';
+export function openFanGates() {
+  const { fansGate, tagLines, teams } = getRefs();
+  const [fansLeft, fansRight] = fansGate;
+  const [leftTeam, rightTeam] = teams;
   tagLines.forEach(text => {
     text.style.opacity = 0;
     text.style.pointerEvents = 'none';

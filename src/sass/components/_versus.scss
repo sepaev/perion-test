@@ -1,8 +1,10 @@
 .versus {
-  z-index: 170;
+  z-index: 80;
   position: absolute;
   width: 100%;
   height: 100%;
+  pointer-events: none;
+
   &__tagline {
     display: flex;
     margin: auto;
@@ -27,12 +29,10 @@
     text-transform: uppercase;
     line-height: 0.569;
     text-align: center;
-    -moz-transform: matrix(1.46457255349789, 0, 0, 1.46534663789396, 0, 0);
-    -webkit-transform: matrix(1.46457255349789, 0, 0, 1.46534663789396, 0, 0);
-    -ms-transform: matrix(1.46457255349789, 0, 0, 1.46534663789396, 0, 0);
+    transform: matrix(1.46457255349789, 0, 0, 1.46534663789396, 0, 0);
     position: fixed;
     top: 50%;
-    z-index: 173;
+    z-index: 83;
     opacity: 0;
     transition: opacity #{$duration / 4}ms linear;
     filter: drop-shadow(6.691px 7.431px 30.4px rgba(0, 0, 0));
@@ -106,7 +106,7 @@
     width: 100%;
     height: 100%;
     justify-content: center;
-    z-index: 175;
+    z-index: 85;
   }
   &__team-logo {
     width: 50%;
@@ -126,24 +126,17 @@
     opacity: 0;
     width: 50vw;
     height: 50vw;
-    // transition: all #{$duration}ms linear;
+    transition: transform #{$duration * 1.5}ms linear;
+    // width: 50vw;
+    // height: 50vw;
 
     &.left-side {
       transform: translateX(-60%);
-      transition: transform #{$duration * 1.5}ms linear;
-      // animation: teamsAnimationLeft #{$duration}ms infinite linear;
-      // left: 18.4%;
-      width: 50vw;
-      height: 50vw;
-      // max-width: 378px;
     }
     &.right-side {
       transform: translateX(60%);
-      transition: transform #{$duration * 1.5}ms linear;
-      // animation: teamsAnimationRight #{$duration}ms infinite linear;
-      width: 50vw;
-      height: 50vw;
-      // max-width: 399px;
+      // width: 50vw;
+      // height: 50vw;
     }
   }
 }
