@@ -2,7 +2,7 @@ export { moveCup } from './moveCup';
 export { createConfetti } from './createConfetti';
 export { changeModalBackground } from './changeModalBackground';
 export { moveConfetti } from './moveConfetti';
-export { moveFansGate } from './moveFansGate';
+export { closeFansGate } from './closeFansGate';
 export { writeTaglines } from './writeTaglines';
 export { teamLogoAnimation } from './teamLogoAnimation';
 export { openFanGates } from './openFanGates';

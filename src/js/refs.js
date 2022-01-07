@@ -11,7 +11,6 @@ export const getRefs = () => {
     cupHoist: document.querySelector('.cupHoist__image'),
     confettiAll: document.querySelectorAll('.confetti__item'),
     fansGate: document.querySelectorAll('.fans__wrapper'),
-    // fansRight: document.querySelector('.fans__wrapper.right-side'),
     tagLines: document.querySelectorAll('.versus__tagline-p'),
     teams: document.querySelectorAll('.versus__team-svg'),
   };

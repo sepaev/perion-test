@@ -4,7 +4,7 @@ import {
   createConfetti,
   changeModalBackground,
   moveConfetti,
-  moveFansGate,
+  closeFansGate,
   writeTaglines,
   teamLogoAnimation,
   openFanGates,
@@ -30,7 +30,7 @@ function openModal() {
   delayAction += actionTime; //250
   window.setTimeout(moveConfetti, delayAction); // 250 + 2000 => 2250
   delayAction += actionTime * 2; //750
-  window.setTimeout(moveFansGate, delayAction); //750 + 1500 => 2250
+  window.setTimeout(closeFansGate, delayAction); //750 + 1500 => 2250
   delayAction += actionTime * 4; //1750
   window.setTimeout(writeTaglines, delayAction); // 1750 + 1800 => 3550
   delayAction += actionTime * 8; //3750

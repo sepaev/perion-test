@@ -1,4 +1,4 @@
-.background1 {
+.background {
   position: fixed;
   z-index: 50;
   width: 100%;
@@ -18,16 +18,16 @@
     }
   }
 
-  &__1picture {
+  &__picture {
     z-index: 55;
     height: 100%;
     min-width: 50%;
     background-repeat: no-repeat;
     background-size: 120%;
 
-    background: radial-gradient(circle closest-side at 33% 57%, transparent, #000 600px);
+    background: radial-gradient(circle closest-side at 58% 48%, transparent, #000 130%);
   }
-  &__1wrapper {
+  &__wrapper {
     display: block;
     outline: solid 1px black;
     width: 100%;
@@ -39,11 +39,11 @@
     }
   }
   //LEFT SIDE
-  &__1wrapper.left-side {
+  &__wrapper.left-side {
     z-index: 51;
     transform: translate(-4%, 0%);
   }
-  &__1picture.left-side {
+  &__picture.left-side {
     z-index: 53;
     transform: rotate(45deg) translate(10%, 31%);
     background-color: black;
@@ -67,17 +67,17 @@
       height: 100%;
       position: fixed;
       left: -20px;
-      background: radial-gradient(circle closest-side at 33% 57%, transparent, #000 600px);
+      background: radial-gradient(circle closest-side at 58% 48%, transparent, #000 600px);
       opacity: 0.8;
       background-position: bottom 0% left -10%;
     }
   }
   //RIGHT SIDE
-  &__1wrapper.right-side {
+  &__wrapper.right-side {
     z-index: 52;
     transform: translate(12%, 0%);
   }
-  &__1picture.right-side {
+  &__picture.right-side {
     z-index: 54;
     transform: rotate(45deg) translate(-10%, -24%);
     // background-image: linear-gradient(rgb(208, 173, 104), rgb(208, 173, 104)),

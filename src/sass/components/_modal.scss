@@ -25,12 +25,12 @@
       url('../images/trophy.jpg');
     width: 100%;
     height: 100%;
-    position: fixed;
+    // position: fixed;
     z-index: 50;
-    right: -10%;
-    background-repeat: no-repeat;
+    // right: -30%;
+    background-repeat: repeat-x;
     background-size: contain;
-    background-position: right;
+    background-position: bottom 0% right -150px;
   }
   &.isOpen {
     opacity: 1;
