@@ -127,16 +127,12 @@
     width: 50vw;
     height: 50vw;
     transition: transform #{$duration * 1.5}ms linear;
-    // width: 50vw;
-    // height: 50vw;
 
     &.left-side {
       transform: translateX(-60%);
     }
     &.right-side {
       transform: translateX(60%);
-      // width: 50vw;
-      // height: 50vw;
     }
   }
 }

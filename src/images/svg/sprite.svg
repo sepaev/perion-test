@@ -6,25 +6,12 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
 >
   <defs>
-    <symbol id="close" viewBox="0 0 115 115">
-      <defs>
-        <clipPath id="a">
-          <path
-            fill="#fff"
-            d="M96.037 18.963c21.284 21.283 21.284 55.79 0 77.074-21.283 21.284-55.79 21.284-77.074 0-21.284-21.283-21.284-55.79 0-77.074 21.283-21.284 55.79-21.284 77.074 0z"
-          />
-        </clipPath>
-        <clipPath id="b">
-          <path
-            fill="#fff"
-            d="M89.32 26.387c17.183 17.183 17.183 45.043 0 62.226s-45.043 17.183-62.226 0-17.183-45.043 0-62.226 45.043-17.183 62.226 0z"
-          />
-        </clipPath>
-      </defs>
+    <symbol id="watch-spot" viewBox="0 0 114 114">
       <path
-        fill-opacity="0.5"
+        fill-opacity="0"
         d="M96.037 18.963c21.284 21.283 21.284 55.79 0 77.074-21.283 21.284-55.79 21.284-77.074 0-21.284-21.283-21.284-55.79 0-77.074 21.283-21.284 55.79-21.284 77.074 0z"
       />
+      <!-- внешний -->
       <path
         fill="none"
         fill-opacity="0.8"
@@ -32,21 +19,72 @@
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-miterlimit="20"
-        stroke-width="6"
-        d="M96.037 18.963c21.284 21.283 21.284 55.79 0 77.074-21.283 21.284-55.79 21.284-77.074 0-21.284-21.283-21.284-55.79 0-77.074 21.283-21.284 55.79-21.284 77.074 0z"
+        stroke-width="3"
+        d="M96.037 18.963c21.284 21.283 21.284 55.79 0 77.074-21.283 21.284-55.79 21.284-77.074
+      0-21.284-21.283-21.284-55.79 0-77.074 21.283-21.284 55.79-21.284 77.074 0z"
         clip-path='url("#a")'
       />
+      <!-- средний -->
       <path
+        stroke="transparent"
         fill-opacity="0.5"
+        stroke-width="8"
         d="M89.32 26.387c17.183 17.183 17.183 45.043 0 62.226s-45.043 17.183-62.226 0-17.183-45.043 0-62.226 45.043-17.183 62.226 0z"
       />
+      <!-- внутренний -->
       <path
         fill="none"
         stroke="#fff"
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-miterlimit="20"
-        stroke-width="10"
+        stroke-width="5"
+        d="M89.32 26.387c17.183 17.183 17.183 45.043 0 62.226s-45.043 17.183-62.226 0-17.183-45.043 0-62.226 45.043-17.183 62.226 0z"
+        clip-path='url("#b")'
+      />
+      <g>
+        <image
+          id="Plus_sign"
+          data-name="Plus sign"
+          width="36"
+          height="36"
+          transform="translate(39 39)"
+          xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAAX0lEQVRYhe3XMQ4AEBAF0SXuf+XVqEQ1S6KYd4CfSShomRmX7EOtOtirAy8ZRxlHGUcZRxlHGUcZRxlHjcML9pbyrsdKfX/nyr+kxd/XN4yjjKOMo4yjjKOMo4xDImICeVoHTqGgZvUAAAAASUVORK5CYII="
+        />
+      </g>
+    </symbol>
+
+    <symbol id="close" viewBox="0 0 114 114">
+      <path
+        fill-opacity="0.1"
+        d="M96.037 18.963c21.284 21.283 21.284 55.79 0 77.074-21.283 21.284-55.79 21.284-77.074 0-21.284-21.283-21.284-55.79 0-77.074 21.283-21.284 55.79-21.284 77.074 0z"
+      />
+      <!-- внешний -->
+      <path
+        fill="none"
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="20"
+        stroke-width="2"
+        d="M96.037 18.963c21.284 21.283 21.284 55.79 0 77.074-21.283 21.284-55.79 21.284-77.074 0-21.284-21.283-21.284-55.79 0-77.074 21.283-21.284 55.79-21.284 77.074 0z"
+        clip-path='url("#a")'
+      />
+      <!-- средний -->
+      <path
+        stroke="transparent"
+        fill-opacity="0.5"
+        stroke-width="30"
+        d="M89.32 26.387c17.183 17.183 17.183 45.043 0 62.226s-45.043 17.183-62.226 0-17.183-45.043 0-62.226 45.043-17.183 62.226 0z"
+      />
+      <!-- внутренний -->
+      <path
+        fill="none"
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="20"
+        stroke-width="3"
         d="M89.32 26.387c17.183 17.183 17.183 45.043 0 62.226s-45.043 17.183-62.226 0-17.183-45.043 0-62.226 45.043-17.183 62.226 0z"
         clip-path='url("#b")'
       />

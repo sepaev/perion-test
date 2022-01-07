@@ -25,19 +25,22 @@
       url('../images/trophy.jpg');
     width: 100%;
     height: 100%;
-    // position: fixed;
     z-index: 50;
-    // right: -30%;
     background-repeat: repeat-x;
     background-size: contain;
-    background-position: bottom 0% right -150px;
+    background-position: bottom 0% right -300px;
+    @for $i from 10 through 0 {
+      @media (max-height: #{$maxHeight/3+($i*50)+200}px) {
+        background-position: bottom 0% right #{$i * (-30) + 'px'};
+      }
+    }
   }
   &.isOpen {
     opacity: 1;
     pointer-events: initial;
     transform: scale(1) translateX(-50%);
   }
-  //modal__close-button*********************************
+
   &__close-button {
     border: none;
     border-radius: 50%;
@@ -53,66 +56,16 @@
   &__close-svg:hover {
     fill: orange;
   }
+  &__watch-button {
+    background: transparent;
+    position: absolute;
+    right: 17%;
+    top: 12%;
+    z-index: 1000;
+    border-radius: 50%;
+    border: none;
+  }
+  &__watch-svg:hover {
+    // stroke: 5px solid #fff;
+  }
 }
-
-// @media (max-width: $max-mobile) {
-//   padding: 46px 20px 43px 21px;
-//   min-width: $min-mobile;
-// }
-// @media (min-width: $min-tablet) and (max-width: $max-tablet) {
-//   padding: 41px 76px 37px 71px;
-//   min-width: $min-tablet;
-// }
-// @media (min-width: $min-desktop) {
-//   max-width: 100%;
-//   padding: 46px 71px 65px 71px;
-//   margin: auto;
-// }
-
-// @for $i from 1 through 5 {
-//   &:nth-child(#{$i}) {
-//     transform: rotate(#{randomNum(-80, 180)}deg);
-//     animation: confettiAnimation 3000ms infinite ease-out;
-//     // animation: 3s ease-in 2s 2 reverse both paused confettiAnimation;
-//     // animation-delay: 100ms;
-//     // animation-duration: 4000ms;
-//   }
-//   &:nth-child(#{$i + 5}) {
-//     transform: rotate(#{randomNum(-80, 180)}deg);
-//     animation: confettiAnimation 3000ms infinite ease-out;
-//     // animation: confettiAnimation 4000ms infinite ease-out;
-//     // animation-delay: 1100ms;
-//     // animation-duration: 4000ms;
-//   }
-//   // &:nth-child(#{$i + 8}) {
-//   //   transform: rotate(#{randomNum(-80, 180)}deg);
-//   //   animation: confettiAnimation 2000ms infinite ease-out;
-//   //   animation-delay: 3000ms;
-//   //   animation-duration: 4000ms;
-//   // }
-// }
-// &:nth-child(even) {
-//   top: 60%;
-//   // left: 0%;
-// }
-// &:nth-child(5n-4) {
-//   // animation-delay: 200ms;
-//   left: -10%;
-// }
-// &:nth-child(5n-3) {
-//   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-//   // animation-delay: 400ms;
-//   left: 15%;
-// }
-// &:nth-child(5n-2) {
-//   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-//   left: 40%;
-// }
-// &:nth-child(5n-1) {
-//   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-//   left: 65%;
-// }
-// &:nth-child(5n) {
-//   // animation: confettiAnimation #{$duration}ms infinite ease-out;
-//   left: 90%;
-// }

@@ -8,7 +8,7 @@
   pointer-events: none;
   opacity: 0;
   @for $i from 9 through 7 {
-    @media (max-height: #{$maxHeight/3+($i*50)-50}px) {
+    @media (max-height: #{$maxHeight/3+($i*50)+50}px) {
       height: #{134 - (-9 + $i) * 10 + '%'};
     }
   }
