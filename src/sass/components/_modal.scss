@@ -53,19 +53,40 @@
     top: 17px;
     z-index: 1000;
   }
-  &__close-svg:hover {
+  &__close-svg:hover,
+  &__watch-svg:hover {
     fill: orange;
+    cursor: pointer;
+    & + .modal__watch-text {
+      color: orange;
+      cursor: none;
+    }
   }
   &__watch-button {
+    opacity: 0;
+    pointer-events: none;
     background: transparent;
     position: absolute;
-    right: 17%;
-    top: 12%;
-    z-index: 1000;
+    right: 5%;
+    top: 17%;
+    z-index: 59;
     border-radius: 50%;
     border: none;
   }
-  &__watch-svg:hover {
-    // stroke: 5px solid #fff;
+
+  &__watch-text {
+    font-size: 65px;
+    font-family: 'DINNextLTPro-Heavy';
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    text-shadow: 0.209px 1.989px 3px rgba(0, 0, 0, 0.75);
+    transform: matrix(0.46389691309444, 0, 0, 0.46389691309444, 0, 0);
+    margin: 0;
+    &:hover {
+      // color: orange;
+      cursor: default;
+    }
   }
 }

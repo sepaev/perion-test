@@ -1,9 +1,14 @@
 export const getRefs = () => {
   return {
-    ______DOM: '_______________this is just divider',
+    ______DOM: '___________________________this is just divider',
     body: document.querySelector('body'),
     modalWindow: document.querySelector('.modal'),
     closeButton: document.querySelector('.modal__close-button'),
+    hotspot: document.querySelector('.modal__watch-button'),
+    videoBox: document.querySelector('.videoBox'),
+    videoBoxOverlay: document.querySelector('.videoBox__overlay'),
+    videoBoxContainer: document.querySelector('.videoBox__video-container'),
+    videoBoxContent: document.querySelector('.videoBox__video-content'),
     confettiBox: document.querySelector('.confetti__list'),
     background: document.querySelector('.background'),
     dashboard: document.querySelector('.dashboard'),

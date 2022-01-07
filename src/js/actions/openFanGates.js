@@ -1,6 +1,6 @@
 import { getRefs } from '../refs';
 export function openFanGates() {
-  const { fansGate, tagLines, teams } = getRefs();
+  const { fansGate, tagLines, teams, hotspot } = getRefs();
   const [fansLeft, fansRight] = fansGate;
   const [leftTeam, rightTeam] = teams;
   tagLines.forEach(text => {
@@ -14,4 +14,6 @@ export function openFanGates() {
 
   leftTeam.style.animation = 'teamsHideLeftAnimation 800ms 1 linear';
   rightTeam.style.animation = 'teamsHideRightAnimation 800ms 1 linear';
+  hotspot.style.opacity = 1;
+  hotspot.style.pointerEvents = 'initial';
 }
