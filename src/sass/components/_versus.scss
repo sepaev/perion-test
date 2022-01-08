@@ -1,5 +1,5 @@
 .versus {
-  z-index: 80;
+  z-index: $versusZ;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -15,7 +15,7 @@
     justify-content: center;
     font-size: 307px;
     @for $i from 1 through 20 {
-      @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+      @media (max-width: #{$maxWidth/(10+$i)*10+'px'}) {
         font-size: #{$maxWidth/(10 + $i) * 1.53+'px'};
       }
     }
@@ -25,39 +25,39 @@
     margin: 0;
     width: 100%;
     font-family: 'DINNextLTPro-Heavy';
-    color: rgb(255, 255, 255);
+    color: $white;
     text-transform: uppercase;
     line-height: 0.569;
     text-align: center;
-    transform: matrix(1.46457255349789, 0, 0, 1.46534663789396, 0, 0);
+    transform: matrix(1.46, 0, 0, 1.46, 0, 0);
     position: fixed;
     top: 50%;
-    z-index: 83;
+    z-index: $versusZ + 3;
     opacity: 0;
-    transition: opacity #{$duration / 4}ms linear;
-    filter: drop-shadow(6.691px 7.431px 30.4px rgba(0, 0, 0));
+    transition: opacity #{$duration / 4 + 'ms'} linear;
+    filter: drop-shadow($shadow);
     &.line1 {
       font-size: 100%;
       line-height: 175.14px;
-      text-shadow: 6.691px 7.431px 30.4px rgba(0, 0, 0, 1);
+      @include textShadow(1);
       transform: translateY(#{-100 - $dislocation + '%'});
       @for $i from 1 through 1 {
-        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+        @media (max-width: #{$maxWidth / (10 + $i) * 10 + 'px'}) {
           transform: translateY(#{-100 - $dislocation + $i * 10+'%'});
         }
       }
       @for $i from 2 through 6 {
-        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+        @media (max-width: #{$maxWidth / (10 + $i) * 10 + 'px'}) {
           transform: translateY(#{-90 - $dislocation + (-1 + $i) * 6 +'%'});
         }
       }
       @for $i from 7 through 10 {
-        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+        @media (max-width: #{$maxWidth / (10 + $i) * 10 + 'px'}) {
           transform: translateY(#{-57 - $dislocation + (-6 + $i) * 3+'%'});
         }
       }
       @for $i from 11 through 20 {
-        @media (max-width: #{$maxWidth/(10+$i)*10}px) {
+        @media (max-width: #{$maxWidth / (10 + $i) * 10 + 'px'}) {
           transform: translateY(#{-45 - $dislocation + (-10 + $i) * 1+'%'});
         }
       }
@@ -65,14 +65,14 @@
     &.line2 {
       font-size: 70.03%;
       line-height: 176.61px;
-      text-shadow: 6.691px 7.431px 30.4px rgba(0, 0, 0, 0.75);
+      @include textShadow(0.75);
       transform: translateY(#{$dislocation * -1}px);
     }
     &.line3 {
       font-size: 40.07%;
       line-height: 110.67px;
       transform: translateY(#{150 - $dislocation + '%'});
-      text-shadow: 6.691px 7.431px 30.4px rgba(0, 0, 0, 0.5);
+      @include textShadow(0.5);
       @for $i from 1 through 1 {
         @media (max-width: #{$maxWidth/(10+$i)*10}px) {
           transform: translateY(#{150 - $dislocation - $i * 10+'%'});
@@ -106,7 +106,7 @@
     width: 100%;
     height: 100%;
     justify-content: center;
-    z-index: 85;
+    z-index: $versusZ + 5;
   }
   &__team-logo {
     width: 50%;
@@ -126,7 +126,7 @@
     opacity: 0;
     width: 50vw;
     height: 50vw;
-    transition: transform #{$duration * 1.5}ms linear;
+    transition: transform #{$duration * 1.5 + 'ms'} linear;
 
     &.left-side {
       transform: translateX(-60%);

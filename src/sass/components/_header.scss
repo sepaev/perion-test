@@ -1,29 +1,28 @@
 .header {
   width: 100%;
   min-height: 112px;
-  font-family: 'Nulshock Book';
+  font-family: 'Nulshock-Book';
   text-align: center;
   margin: auto;
   justify-content: center;
   text-transform: uppercase;
-  // border-bottom: solid 2px #e1e1e1;
-  background-color: #fff;
-  filter: drop-shadow(0px 0px 2px #e1e1e1);
+  background-color: $white;
+  filter: drop-shadow(0px 0px 2px $lightgray);
   &__container {
     padding: 17px 0px;
-    min-width: 1000px;
+    min-width: #{$maxWidth/2 + 'px'};
     margin: auto;
     display: inline-block;
   }
   &__logo-text {
-    color: #a4a8ab;
+    color: $gray;
     font-size: 37px;
     display: block;
     margin-bottom: 20px;
   }
   &__nav-list {
     display: flex;
-    color: #d5d5d5;
+    color: $lightgray;
     font-size: 12px;
     justify-content: space-around;
     margin: 0;
@@ -31,7 +30,7 @@
     & li {
       cursor: pointer;
       &:hover {
-        color: #8a8a8a;
+        color: $darkGray;
       }
     }
   }

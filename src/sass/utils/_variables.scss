@@ -1,4 +1,24 @@
 $duration: 1000;
-$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 $maxWidth: 2000;
 $maxHeight: 1050;
+
+$black: #000000;
+$halfBlack: rgba(0, 0, 0, 0.5);
+$white: #ffffff;
+$halfWhite: rgba(255, 255, 255, 0.5);
+$orange: #d0ad68;
+$lightgray: #e1e1e1;
+$gray: #a4a8ab;
+$darkGray: #8a8a8a;
+
+$modalZ: 20;
+$backgroundZ: 50;
+$dashboardZ: 55;
+$videoBoxZ: 60;
+$fansZ: 70;
+$versusZ: 80;
+
+$orangeGardient: linear-gradient($orange, $orange);
+$grayBlackGardient: linear-gradient($halfWhite 50%, $halfBlack 100%);
+
+$shadow: 6.69px 7.43px 30.4px $black;

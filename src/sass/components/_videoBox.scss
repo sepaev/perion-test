@@ -1,5 +1,5 @@
 .videoBox {
-  z-index: 60;
+  z-index: $videoBoxZ;
   width: 100%;
   height: 100%;
   left: 0;
@@ -10,11 +10,11 @@
     opacity: 1;
   }
   &__overlay {
-    z-index: 61;
+    z-index: $videoBoxZ + 1;
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: rgba($color: #000000, $alpha: 0.7);
+    background-color: rgba($color: $black, $alpha: 0.7);
     pointer-events: none;
   }
   &__video-container {
@@ -24,40 +24,40 @@
     transform: translate(-50%, -50%);
     width: fit-content;
     height: fit-content;
-    z-index: 62;
+    z-index: $videoBoxZ + 2;
     opacity: 1;
-    background-color: black;
+    background-color: $black;
   }
   &__close-svg {
     pointer-events: none;
     width: 5vw;
     height: 5vw;
-    z-index: 64;
+    z-index: $videoBoxZ + 4;
     &:hover {
-      fill: orange;
+      fill: $orange;
     }
   }
   &__close-button {
     position: absolute;
     top: 0%;
     right: 0%;
-    z-index: 63;
+    z-index: $videoBoxZ + 3;
     transform: translate(50%, -50%);
     pointer-events: none;
     &:hover {
-      fill: orange;
+      fill: $orange;
     }
   }
   &__play-button {
     position: absolute;
     top: 50%;
     right: 50%;
-    z-index: 63;
+    z-index: $videoBoxZ + 3;
     transform: translate(50%, -60%);
     pointer-events: none;
     opacity: 0;
     &:hover {
-      fill: orange;
+      fill: $orange;
     }
   }
   &__play-svg {

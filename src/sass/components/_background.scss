@@ -1,6 +1,6 @@
 .background {
   position: fixed;
-  z-index: 50;
+  z-index: $backgroundZ;
   width: 100%;
   height: 120%;
   min-height: 120%;
@@ -19,17 +19,16 @@
   }
 
   &__picture {
-    z-index: 55;
+    z-index: $backgroundZ + 5;
     height: 100%;
     min-width: 50%;
     background-repeat: no-repeat;
     background-size: 120%;
 
-    background: radial-gradient(circle closest-side at 58% 48%, transparent, #000 130%);
+    background: radial-gradient(circle closest-side at 58% 48%, transparent, $black 130%);
   }
   &__wrapper {
     display: block;
-    outline: solid 1px black;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -40,13 +39,13 @@
   }
   //LEFT SIDE
   &__wrapper.left-side {
-    z-index: 51;
+    z-index: $backgroundZ + 1;
     transform: translate(-4%, 0%);
   }
   &__picture.left-side {
-    z-index: 53;
+    z-index: $backgroundZ + 3;
     transform: rotate(45deg) translate(10%, 31%);
-    background-color: black;
+    background-color: $black;
     background-position: bottom 0% left 50%;
 
     @for $i from 10 through 5 {
@@ -61,27 +60,25 @@
       }
     }
     &::after {
-      z-index: 56;
+      z-index: $backgroundZ + 6;
       content: '';
       width: 100%;
       height: 100%;
       position: fixed;
       left: -20px;
-      background: radial-gradient(circle closest-side at 58% 48%, transparent, #000 600px);
+      background: radial-gradient(circle closest-side at 58% 48%, transparent, $black 600px);
       opacity: 0.8;
       background-position: bottom 0% left -10%;
     }
   }
   //RIGHT SIDE
   &__wrapper.right-side {
-    z-index: 52;
+    z-index: $backgroundZ + 2;
     transform: translate(12%, 0%);
   }
   &__picture.right-side {
-    z-index: 54;
+    z-index: $backgroundZ + 4;
     transform: rotate(45deg) translate(-10%, -24%);
-    // background-image: linear-gradient(rgb(208, 173, 104), rgb(208, 173, 104)),
-    //   url('../images/trophy.jpg');
     background-position: bottom 30% right 50%;
 
     @for $i from 9 through 5 {
@@ -90,13 +87,12 @@
       }
     }
     &::after {
-      z-index: 56;
+      z-index: $backgroundZ + 6;
       content: '';
       width: 100%;
       height: 100%;
       position: fixed;
       left: -20px;
-      // background: radial-gradient(circle closest-side at 67% 57%, transparent, #000 600px);
       opacity: 0.8;
     }
   }
