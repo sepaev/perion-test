@@ -2,7 +2,7 @@
   padding-bottom: 0;
   &__container {
     padding: 17px 0px 0px;
-    min-width: 1000px;
+    min-width: #{$maxWidth/2 + 'px'};
     margin: auto;
     display: inline-block;
   }

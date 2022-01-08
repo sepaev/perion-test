@@ -30,12 +30,38 @@
   }
   &__close-svg {
     pointer-events: none;
+    width: 5vw;
+    height: 5vw;
+    z-index: 64;
+    &:hover {
+      fill: orange;
+    }
   }
   &__close-button {
     position: absolute;
-    top: -55px;
-    right: -55px;
+    top: 0%;
+    right: 0%;
     z-index: 63;
+    transform: translate(50%, -50%);
     pointer-events: none;
+    &:hover {
+      fill: orange;
+    }
+  }
+  &__play-button {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    z-index: 63;
+    transform: translate(50%, -60%);
+    pointer-events: none;
+    opacity: 0;
+    &:hover {
+      fill: orange;
+    }
+  }
+  &__play-svg {
+    width: 10vw;
+    height: 10vw;
   }
 }

@@ -54,6 +54,54 @@
       </g>
     </symbol>
 
+    <symbol id="play" viewBox="0 0 114 114">
+      <path
+        fill-opacity="0"
+        d="M96.037 18.963c21.284 21.283 21.284 55.79 0 77.074-21.283 21.284-55.79 21.284-77.074 0-21.284-21.283-21.284-55.79 0-77.074 21.283-21.284 55.79-21.284 77.074 0z"
+      />
+      <!-- внешний -->
+      <path
+        fill="none"
+        fill-opacity="0.8"
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="20"
+        stroke-width="3"
+        d="M96.037 18.963c21.284 21.283 21.284 55.79 0 77.074-21.283 21.284-55.79 21.284-77.074
+      0-21.284-21.283-21.284-55.79 0-77.074 21.283-21.284 55.79-21.284 77.074 0z"
+        clip-path='url("#a")'
+      />
+      <!-- средний -->
+      <path
+        stroke="transparent"
+        fill-opacity="0.5"
+        stroke-width="8"
+        d="M89.32 26.387c17.183 17.183 17.183 45.043 0 62.226s-45.043 17.183-62.226 0-17.183-45.043 0-62.226 45.043-17.183 62.226 0z"
+      />
+      <!-- внутренний -->
+      <path
+        fill="none"
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="20"
+        stroke-width="5"
+        d="M89.32 26.387c17.183 17.183 17.183 45.043 0 62.226s-45.043 17.183-62.226 0-17.183-45.043 0-62.226 45.043-17.183 62.226 0z"
+        clip-path='url("#b")'
+      />
+      <g>
+        <image
+          id="Vector_Smart_Object"
+          data-name="Vector Smart Object"
+          width="20"
+          height="42"
+          transform="translate(53 35)"
+          xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAzCAYAAABrNQNJAAABaUlEQVRYhcWYvUoDURBGv/EfwUYQwQdQsLVLoa0/ncHCB7BN6RPY2lpapLUSBLGwUQtTiGBnISjYiI0WWgjhyERSmcQYNl9Ot+yFs3t35u7MCDgERuWEH86AKbc0uQXm3NLkCVh0S5M3YMUtTb6Abbe0ye4gpMkBMOyWJsfApFua1IAZtzR5AObd0uQVKLmlySdQdkuTOlBxS5vsA+GWJkfAhFuaXALT3TgjV/9razpzL2k1Ih47LRoqUJgsSLoGlpzSZFbSBbDmlCZ5Tp8AOy3vFhhI7dj7lVIGaVIFxprOoqO3E+eSyhHx7pQmd5I23NKkNpA37VfKtCK/6XJEPLukVUnrGUSNK0O6WPO03u5EGunTdn5I2oqIU5f0pZGLETftFhQttf9PrySV/hI2KChoskYa7/rxChBaq0F73ZsV/mZPwh6l9l7G3rXZ+1N7J26fOVinK/Y5kn1iZp8N2qeg9nmvd7It6RujRQn+5/W4EwAAAABJRU5ErkJggg=="
+        />
+      </g>
+    </symbol>
+
     <symbol id="close" viewBox="0 0 114 114">
       <path
         fill-opacity="0.1"

@@ -1,38 +1,24 @@
 import Playable from 'playable';
 import { getRefs } from '../refs';
-import videoFile from '../../video/video.mp4';
-const { clientWidth, clientHeight } = document.documentElement;
 
-const videoWidthHor = clientWidth * 0.595;
-const videoHeightHor = videoWidthHor * 0.56;
-const videoHeightVer = clientHeight * 0.668;
-const videoWidthVer = videoHeightVer * 1.781;
+import { playVideoBox } from './';
+import { getConfigsForPlayable } from '../getConfigsForPlayable';
 
-let videoWidth, videoHeight;
-if (videoHeightHor <= clientHeight) {
-  videoWidth = videoWidthHor;
-  videoHeight = videoHeightHor;
-} else {
-  videoWidth = videoWidthVer;
-  videoHeight = videoHeightVer;
-}
-console.log('videoWidth', videoWidth);
-console.log('videoHeight', videoHeight);
-const config = {
-  width: videoWidth,
-  height: videoHeight,
-  src: videoFile,
-  preload: 'metadata',
-};
-console.log(document);
 export function openVideoBox(e) {
-  const { videoBox, videoBoxOverlay, hotspot, videoBoxContent } = getRefs();
   e.preventDefault();
+  const [config, theme] = getConfigsForPlayable();
+  const { videoBox, videoBoxOverlay, hotspot, videoBoxContent, videoBoxCloseBtn, videoBoxPlayBtn } =
+    getRefs();
   videoBox.classList.toggle('isOpen');
   hotspot.style.opacity = 0;
   hotspot.style.pointerEvents = 'none';
   videoBoxOverlay.style.pointerEvents = 'initial';
+  videoBoxCloseBtn.style.pointerEvents = 'initial';
+  videoBoxPlayBtn.style.pointerEvents = 'initial';
+  videoBoxPlayBtn.style.opacity = 1;
 
-  const player = Playable.create(config);
+  const player = Playable.create(config, theme);
   player.attachToElement(videoBoxContent);
+  player.hideOverlay();
+  videoBoxPlayBtn.addEventListener('click', e => playVideoBox(e, player));
 }

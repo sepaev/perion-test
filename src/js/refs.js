@@ -9,6 +9,8 @@ export const getRefs = () => {
     videoBoxOverlay: document.querySelector('.videoBox__overlay'),
     videoBoxContainer: document.querySelector('.videoBox__video-container'),
     videoBoxContent: document.querySelector('.videoBox__video-content'),
+    videoBoxCloseBtn: document.querySelector('.videoBox__close-button'),
+    videoBoxPlayBtn: document.querySelector('.videoBox__play-button'),
     confettiBox: document.querySelector('.confetti__list'),
     background: document.querySelector('.background'),
     dashboard: document.querySelector('.dashboard'),

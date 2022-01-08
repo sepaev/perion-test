@@ -39,6 +39,10 @@
     opacity: 1;
     pointer-events: initial;
     transform: scale(1) translateX(-50%);
+    @media (max-width: 1000px) {
+      transform: scale(1);
+      left: 0%;
+    }
   }
 
   &__close-button {

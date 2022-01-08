@@ -8,4 +8,5 @@ export { animateTeamLogo } from './animateTeamLogo';
 export { openFanGates } from './openFanGates';
 export { closeModalWindow } from './closeModalWindow';
 export { openVideoBox } from './openVideoBox';
+export { playVideoBox } from './playVideoBox';
 export { closeVideoBox } from './closeVideoBox';

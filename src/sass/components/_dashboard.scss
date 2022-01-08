@@ -18,6 +18,9 @@
       @media (max-height: #{$maxHeight/3+($i*50)+200+'px'}) {
         padding: #{($maxHeight/3 + ($i * 50)+200) * 0.015+'px 15px'};
       }
+      @media (max-width: #{$maxWidth/3+($i*50)+500+'px'}) {
+        padding: #{($maxHeight/3 + ($i * 50)+200) * 0.015+'px 15px'};
+      }
     }
   }
   &__event-wrapper {
@@ -30,24 +33,26 @@
       @media (max-height: #{$maxHeight/3+($i*50)+200+'px'}) {
         height: #{($maxHeight/3 + ($i * 50)+200) * 0.082+'px'};
       }
+      @media (max-width: #{$maxWidth/3+($i*50)+500+'px'}) {
+        height: #{($maxHeight/3 + ($i * 50)+200) * 0.082+'px'};
+      }
     }
     &.team1 {
       width: 830px;
       & span {
-        transform: matrix(1.17980774512497, 0, 0, 1.17962466487936, 65, 0);
+        transform: matrix(1.18, 0, 0, 1.18, 65, 0);
       }
       @for $i from 9 through 0 {
         @media (max-height: #{$maxHeight/3+($i*50)+200+'px'}) {
           width: #{($maxHeight/3 + ($i * 50)+200) * 0.83+'px'};
           & span {
-            transform: matrix(
-              1.17980774512497,
-              0,
-              0,
-              1.17962466487936,
-              #{($maxHeight/3 + ($i * 50)+200) * 0.065},
-              0
-            );
+            transform: matrix(1.18, 0, 0, 1.18, #{($maxHeight/3 + ($i * 50)+200) * 0.065}, 0);
+          }
+        }
+        @media (max-width: #{$maxWidth/3+($i*50)+500+'px'}) {
+          width: #{($maxHeight/3 + ($i * 50)+200) * 0.83+'px'};
+          & span {
+            transform: matrix(1.18, 0, 0, 1.18, #{($maxHeight/3 + ($i * 50)+200) * 0.065}, 0);
           }
         }
       }
@@ -55,20 +60,19 @@
     &.vs {
       width: 160px;
       & span {
-        transform: matrix(1.17980774512497, 0, 0, 1.17962466487936, 9, 0);
+        transform: matrix(1.18, 0, 0, 1.18, 9, 0);
       }
       @for $i from 9 through 0 {
         @media (max-height: #{$maxHeight/3+($i*50)+200+'px'}) {
           width: #{($maxHeight/3 + ($i * 50)+200) * 0.16+'px'};
           & span {
-            transform: matrix(
-              1.17980774512497,
-              0,
-              0,
-              1.17962466487936,
-              #{($maxHeight/3 + ($i * 50)+200) * 0.009},
-              0
-            );
+            transform: matrix(1.18, 0, 0, 1.18, #{($maxHeight/3 + ($i * 50)+200) * 0.009}, 0);
+          }
+        }
+        @media (max-width: #{$maxWidth/3+($i*50)+500+'px'}) {
+          width: #{($maxHeight/3 + ($i * 50)+200) * 0.16+'px'};
+          & span {
+            transform: matrix(1.18, 0, 0, 1.18, #{($maxHeight/3 + ($i * 50)+200) * 0.009}, 0);
           }
         }
       }
@@ -76,20 +80,19 @@
     &.team2 {
       width: 470px;
       & span {
-        transform: matrix(1.17980774512497, 0, 0, 1.17962466487936, 33, 0);
+        transform: matrix(1.18, 0, 0, 1.18, 33, 0);
       }
       @for $i from 9 through 0 {
         @media (max-height: #{$maxHeight/3+($i*50)+200+'px'}) {
           width: #{($maxHeight/3 + ($i * 50)+200) * 0.47+'px'};
           & span {
-            transform: matrix(
-              1.17980774512497,
-              0,
-              0,
-              1.17962466487936,
-              #{($maxHeight/3 + ($i * 50)+200) * 0.033},
-              0
-            );
+            transform: matrix(1.18, 0, 0, 1.18, #{($maxHeight/3 + ($i * 50)+200) * 0.033}, 0);
+          }
+        }
+        @media (max-width: #{$maxWidth/3+($i*50)+500+'px'}) {
+          width: #{($maxHeight/3 + ($i * 50)+200) * 0.47+'px'};
+          & span {
+            transform: matrix(1.18, 0, 0, 1.18, #{($maxHeight/3 + ($i * 50)+200) * 0.033}, 0);
           }
         }
       }
@@ -108,6 +111,9 @@
       @media (max-height: #{$maxHeight/3+($i*50)+200+'px'}) {
         font-size: #{($maxHeight/3 + ($i * 50)+200) / 15.385 + 'px'};
       }
+      @media (max-width: #{$maxWidth/3+($i*50)+500+'px'}) {
+        font-size: #{($maxHeight/3 + ($i * 50)+200) / 15.385 + 'px'};
+      }
     }
   }
   &__when {
@@ -121,6 +127,10 @@
 
     @for $i from 9 through 0 {
       @media (max-height: #{$maxHeight/3+($i*50)+200+'px'}) {
+        padding: #{($maxHeight/3 + ($i * 50)+200) * 0.015+'px 15px'};
+        font-size: #{($maxHeight/3 + ($i * 50)+200) / 15.375 + 'px'};
+      }
+      @media (max-width: #{$maxWidth/3+($i*50)+500+'px'}) {
         padding: #{($maxHeight/3 + ($i * 50)+200) * 0.015+'px 15px'};
       }
     }
@@ -149,9 +159,18 @@
   }
   &__chanels {
     display: flex;
+    height: 100%;
     padding: 15px;
+    &-svg {
+      display: flex;
+      width: 27.3%;
+      max-width: 27.3%;
+    }
     @for $i from 9 through 0 {
       @media (max-height: #{$maxHeight/3+($i*50)+200+'px'}) {
+        padding: #{($maxHeight/3 + ($i * 50)+200) * 0.015+'px 15px'};
+      }
+      @media (max-width: #{$maxWidth/3+($i*50)+500+'px'}) {
         padding: #{($maxHeight/3 + ($i * 50)+200) * 0.015+'px 15px'};
       }
     }
@@ -164,7 +183,11 @@
   }
   &__mlscup-svg {
     @for $i from 10 through 0 {
-      @media (max-height: #{$maxHeight/3+($i*50)+200}px) {
+      @media (max-height: #{$maxHeight/3+($i*50)+200+'px'}) {
+        width: #{237 + $i * 20 + 'px'};
+        height: #{164 + $i * 20 + 'px'};
+      }
+      @media (max-width: #{$maxWidth/3+($i*50)+500+'px'}) {
         width: #{237 + $i * 20 + 'px'};
         height: #{164 + $i * 20 + 'px'};
       }

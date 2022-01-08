@@ -9,7 +9,7 @@
   opacity: 0;
   @for $i from 9 through 7 {
     @media (max-height: #{$maxHeight/3+($i*50)+50}px) {
-      height: #{134 - (-9 + $i) * 10 + '%'};
+      height: #{123 - (-9 + $i) * 10 + '%'};
     }
   }
   @for $i from 6 through 0 {
